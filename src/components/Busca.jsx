@@ -13,7 +13,7 @@ export default class Busca extends Component {
     }
 
     aoClicarEmOk = () => {
-        alert(this.state.termoDeBusca)
+        this.props.buscarCep(this.state.termoDeBusca);
     }
 
   render() {

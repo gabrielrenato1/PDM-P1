@@ -1,6 +1,7 @@
 import { Component } from "react"
 import Busca from "./components/Busca"
 import LocalidadeLista from "./components/LocalidadeLista"
+import ViaCepClient from "./utils/ViaCepClient"
 
 class App extends Component {
   localidades = [
@@ -51,11 +52,39 @@ class App extends Component {
       }
   ];
 
+  buscarCep = (inputCep) => {
+
+    const cep = inputCep.replace(/\D/g, '')
+
+    if(cep.length != 0 || cep.length == 8){
+
+      ViaCepClient.get(cep + "/json").then(result => {
+        
+        if(result.data.erro){
+          alert("Erro ao consultar o CEP: " + inputCep)
+        }else{
+          console.log(result.data)
+        }
+
+      }).catch(error => {
+        
+        alert("Erro ao consultar o CEP: " + inputCep)
+
+      })
+
+    }else{
+
+      alert("CEP " + inputCep + " inválido!")
+
+    }
+
+  }
+
   render(){
     return (
       <div>
           <div>
-            <Busca dica='Digite um CEP'/>
+            <Busca buscarCep={this.buscarCep} dica='Digite um CEP'/>
           </div>
           <div>
             <LocalidadeLista localidades={this.localidades}/>
