@@ -1,10 +1,16 @@
 import { Component } from "react"
+import Busca from "./components/Busca"
 
 class App extends Component {
 
   render(){
     return (
-      <h1>Hello, P1</h1>
+      <div>
+          <div>
+            <Busca dica='Digite um CEP'/>
+          </div>
+      </div>
+      
     )
   }
   
