@@ -3,7 +3,7 @@ import { Card } from 'primereact/card';
 
 const LocalidadeLista = ({localidades}) => {
   return (
-    <div style={{ width: '50%', marginTop: '20px' }}>
+    <div style={{ marginTop: '20px' }}>
       {localidades.map((localidade, index) => (
         <Card key={index} 
         title={localidade.cep} 

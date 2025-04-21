@@ -19,7 +19,7 @@ export default class Busca extends Component {
   render() {
     return (
       <div
-        style={{display: 'flex', flexDirection: 'column', width: '50%'}}>
+        style={{display: 'flex', flexDirection: 'column'}}>
             <InputMask
                 style={{marginBottom: '10px'}}
                 maxLength={9}
