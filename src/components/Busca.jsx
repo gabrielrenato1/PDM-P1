@@ -5,7 +5,7 @@ import {InputMask} from 'primereact/inputmask'
 export default class Busca extends Component {
 
     state = {
-        termoDeBusca: ''
+        termoDeBusca: null
     }
 
     onTermoAlterado = (event) => {
