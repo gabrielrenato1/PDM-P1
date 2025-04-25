@@ -7,9 +7,9 @@ const LocalidadeLista = ({localidades}) => {
       {localidades.map((localidade, index) => (
         <Card key={index} 
         title={localidade.cep} 
-        subTitle={`${localidade.logradouro}`}
+        subTitle={localidade.logradouro}
         style={{ marginBottom: '10px',}}>
-          <p>{`${localidade.bairro}`}</p>
+          <p>{localidade.bairro}</p>
           <p>{`${localidade.localidade}/${localidade.uf}`}</p>
         </Card>
       ))}
